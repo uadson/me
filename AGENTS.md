@@ -13,14 +13,27 @@ Este documento serve como fonte única da verdade (*Single Source of Truth*) par
 ---
 
 ## 2. Arquitetura e Tecnologias
-- **Frontend / Marcação:** HTML5 semântico, estruturado e acessível.
+- **Frontend / Marcação:** HTML5 semântico, estruturado e acessível com suporte internacional nativo (PT-BR e EN).
 - **Estilização:** [Tailwind CSS](https://tailwindcss.com) com suporte nativo e reativo a Modo Escuro (`dark:`) e Modo Claro, tipografia `Inter` e regras de impressão customizadas (`@page { size: A4 }` e `.no-print`) para exportação limpa em PDF.
-- **Scripts:** JavaScript Vanilla para alternância e persistência de tema (`localStorage`) e atualização dinâmica do ano no rodapé.
+- **Mecanismo de Internacionalização (i18n):**
+  - Controle declarativo baseado no atributo `lang` da tag `html` via seletores CSS puros (`html[lang="pt-BR"] .lang-en { display: none !important; }` e `html[lang="en"] .lang-pt { display: none !important; }`).
+  - Seletor de idioma interativo no topo da página (`🇧🇷 PT` / `🇺🇸 EN`) com persistência em `localStorage` e detecção via URL (`?lang=en` ou `?lang=pt`).
+  - Dropdown inteligente de download de PDF permitindo exportar diretamente o currículo na versão em Português ou na versão em Inglês via `window.print()`.
+  - Ponto de entrada `/en/` (`en/index.html`) para redirecionamento transparente a recrutadores internacionais.
 - **CI/CD:** Pipeline automatizado no GitHub Actions disparado a cada push na branch `main`.
 
 ---
 
 ## 3. Histórico de Versões e Entregas
+
+### [v1.1.0] - 23/09/2026 - Suporte Bilíngue (PT/EN) e Download Customizado em PDF
+- **Internacionalização Completa (PT e EN):**
+  - Tradução técnica integral de todas as seções (Resumo Profissional, Habilidades, Experiência, Projetos, Metodologia, Educação e Contato).
+  - Adição de seletor de idiomas interativo `[ 🇧🇷 PT | 🇺🇸 EN ]` na barra superior.
+  - Dropdown no botão de download permitindo baixar o PDF em Português ou em Inglês.
+  - Criação da rota `/en/` para acesso direto à versão em inglês.
+- **Governança Git:**
+  - Criação da branch `feature/i18n-pdf-download-pt-en`, merge na `main`, tag `v1.1.0` e push remoto.
 
 ### [v1.0.0] - 23/09/2026 - Reformulação com foco em Desenvolvimento Assistido por IA
 - **Novo Posicionamento Estratégico:**

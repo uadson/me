@@ -32,6 +32,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
+        /* Regras de Internacionalização: exibe elementos conforme o atributo lang do HTML */
+        html[lang="pt-BR"] .lang-en {
+            display: none !important;
+        }
+
+        html[lang="en"] .lang-pt {
+            display: none !important;
+        }
+
         @page {
             size: A4;
             margin: 12mm;
@@ -59,27 +68,111 @@
 <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-sky-500 selection:text-white">
 
     <!-- Barra topo -->
-    <header class="no-print sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-zinc-900/70 border-b border-zinc-200 dark:border-zinc-800">
-        <div class="mx-auto max-w-5xl px-4 py-2 flex items-center justify-between">
+    <header class="no-print sticky top-0 z-50 backdrop-blur bg-white/80 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800">
+        <div class="mx-auto max-w-5xl px-4 py-2.5 flex items-center justify-between gap-2">
+            
+            <!-- Navegação Âncora -->
             <nav class="text-sm font-medium hidden md:flex gap-5">
-                <a href="#sobre" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Sobre</a>
-                <a href="#habilidades" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Habilidades</a>
-                <a href="#experiencia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Experiência</a>
-                <a href="#projetos" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Projetos</a>
-                <a href="#metodologia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Metodologia</a>
-                <a href="#educacao" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Educação</a>
-                <a href="#contato" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contato</a>
+                <a href="#sobre" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Sobre</span>
+                    <span class="lang-en">About</span>
+                </a>
+                <a href="#habilidades" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Habilidades</span>
+                    <span class="lang-en">Skills</span>
+                </a>
+                <a href="#experiencia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Experiência</span>
+                    <span class="lang-en">Experience</span>
+                </a>
+                <a href="#projetos" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Projetos</span>
+                    <span class="lang-en">Projects</span>
+                </a>
+                <a href="#metodologia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Metodologia</span>
+                    <span class="lang-en">Methodology</span>
+                </a>
+                <a href="#educacao" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Educação</span>
+                    <span class="lang-en">Education</span>
+                </a>
+                <a href="#contato" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
             </nav>
-            <div class="flex gap-2 ml-auto md:ml-0">
-                <button id="themeToggle"
-                    class="no-print border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 text-sm rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+
+            <!-- Controles: Idioma, Tema e Download de PDF -->
+            <div class="flex items-center gap-2.5 ml-auto md:ml-0">
+                
+                <!-- Seletor de Idioma [PT | EN] -->
+                <div class="inline-flex rounded-lg border border-zinc-300 dark:border-zinc-700 p-0.5 bg-zinc-100 dark:bg-zinc-800 text-xs font-semibold" role="group" aria-label="Seletor de idioma">
+                    <button id="btnLangPt" onclick="setLanguage('pt')" type="button"
+                        class="px-2 py-1 rounded-md transition-all font-medium text-sky-600 dark:text-sky-400 bg-white dark:bg-zinc-900 shadow-xs"
+                        title="Ver em Português">
+                        🇧🇷 PT
+                    </button>
+                    <button id="btnLangEn" onclick="setLanguage('en')" type="button"
+                        class="px-2 py-1 rounded-md transition-all font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                        title="View in English">
+                        🇺🇸 EN
+                    </button>
+                </div>
+
+                <!-- Botão Alternador de Tema -->
+                <button id="themeToggle" type="button"
+                    class="no-print border border-zinc-300 dark:border-zinc-700 px-2.5 py-1.5 text-xs sm:text-sm rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center gap-1.5"
                     aria-label="Alternar tema">
-                    🌙 Tema
+                    <span id="themeIcon">🌙</span>
+                    <span class="hidden sm:inline">Tema</span>
                 </button>
-                <button onclick="window.print()"
-                    class="no-print bg-sky-600 text-white px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-sky-700 transition-colors shadow-sm">
-                    ⬇️ Baixar PDF
-                </button>
+
+                <!-- Botão com Dropdown para Download do PDF (PT ou EN) -->
+                <div class="relative inline-block text-left" id="downloadDropdownContainer">
+                    <button id="downloadDropdownBtn" onclick="toggleDownloadMenu()" type="button"
+                        class="no-print inline-flex items-center gap-1.5 bg-sky-600 text-white px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg hover:bg-sky-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        aria-expanded="false" aria-haspopup="true">
+                        <span>⬇️</span>
+                        <span class="lang-pt">Baixar PDF</span>
+                        <span class="lang-en">Download PDF</span>
+                        <svg class="w-3.5 h-3.5 ml-0.5 transition-transform duration-200" id="dropdownArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Menu Dropdown de Idiomas do PDF -->
+                    <div id="downloadDropdownMenu"
+                        class="hidden absolute right-0 mt-2 w-56 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl z-50 py-1.5 transition-all">
+                        <div class="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 border-b border-zinc-100 dark:border-zinc-800">
+                            <span class="lang-pt">Escolha o idioma do PDF</span>
+                            <span class="lang-en">Choose PDF Language</span>
+                        </div>
+                        
+                        <!-- Opção Português -->
+                        <button onclick="downloadResume('pt')" type="button"
+                            class="w-full text-left px-3.5 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-sky-50 dark:hover:bg-zinc-800 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-2.5 transition-colors">
+                            <span class="text-lg">🇧🇷</span>
+                            <div>
+                                <div class="font-medium text-xs sm:text-sm">Português (PDF)</div>
+                                <div class="text-[11px] text-zinc-500 dark:text-zinc-400">Versão padrão do currículo</div>
+                            </div>
+                        </button>
+
+                        <div class="border-t border-zinc-100 dark:border-zinc-800 my-1"></div>
+
+                        <!-- Opção Inglês -->
+                        <button onclick="downloadResume('en')" type="button"
+                            class="w-full text-left px-3.5 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-sky-50 dark:hover:bg-zinc-800 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-2.5 transition-colors">
+                            <span class="text-lg">🇺🇸</span>
+                            <div>
+                                <div class="font-medium text-xs sm:text-sm">English (PDF)</div>
+                                <div class="text-[11px] text-zinc-500 dark:text-zinc-400">International format</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -93,17 +186,21 @@
                 <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
                     <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Uadson Emile Castro Feitosa</h1>
                 </div>
+                
                 <p class="mt-1 text-base sm:text-lg font-medium text-sky-600 dark:text-sky-400">
                     Senior Software Engineer • Python & AI-Assisted Development
                 </p>
+
                 <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                    Especialista em Integrações de Dados, Backend Python (FastAPI) e Desenvolvimento Assistido por IA
+                    <span class="lang-pt">Especialista em Integrações de Dados, Backend Python (FastAPI) e Desenvolvimento Assistido por IA</span>
+                    <span class="lang-en">Specialist in Large-Scale Data Integrations, Python Backend (FastAPI), and AI-Assisted Development</span>
                 </p>
+
                 <ul class="mt-3 text-sm text-zinc-700 dark:text-zinc-300 flex flex-wrap gap-x-5 gap-y-1.5 justify-center md:justify-start">
                     <li>📧 <a href="mailto:uadsonpy@gmail.com" class="hover:underline text-sky-600 dark:text-sky-400">uadsonpy@gmail.com</a></li>
                     <li>💼 <a href="https://www.linkedin.com/in/uadsonfeitosa" target="_blank" rel="noopener noreferrer" class="hover:underline text-sky-600 dark:text-sky-400">linkedin.com/in/uadsonfeitosa</a></li>
                     <li>🐙 <a href="https://github.com/uadson" target="_blank" rel="noopener noreferrer" class="hover:underline text-sky-600 dark:text-sky-400">github.com/uadson</a></li>
-                    <li>📍 Goiânia, Goiás – Brasil</li>
+                    <li>📍 <span class="lang-pt">Goiânia, Goiás – Brasil</span><span class="lang-en">Goiânia, Goiás – Brazil</span></li>
                 </ul>
             </div>
         </div>
@@ -114,9 +211,13 @@
         <!-- Resumo Profissional -->
         <section id="sobre" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">⚡</span> Resumo Profissional
+                <span class="text-sky-500">⚡</span>
+                <span class="lang-pt">Resumo Profissional</span>
+                <span class="lang-en">Professional Summary</span>
             </h2>
-            <div class="mt-3 text-sm sm:text-base leading-relaxed text-zinc-700 dark:text-zinc-300 space-y-3 text-justify">
+            
+            <!-- Versão em Português -->
+            <div class="lang-pt mt-3 text-sm sm:text-base leading-relaxed text-zinc-700 dark:text-zinc-300 space-y-3 text-justify">
                 <p>
                     <strong>Desenvolvedor de Software Sênior</strong> com mais de 6 anos de experiência sólida em desenvolvimento backend no ecossistema Python (FastAPI, AsyncIO), automações e integrações de dados em larga escala.
                 </p>
@@ -127,67 +228,139 @@
                     Adoto ativamente o <strong>Desenvolvimento Assistido por IA</strong> e o <strong>Spec-Driven Development (SDD)</strong> no fluxo de trabalho diário: utilizo documentação viva de contexto (<code class="bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-sky-600 dark:text-sky-400 text-xs font-mono">AGENTS.md</code>) e TDD rigoroso (<code class="text-xs">pytest</code> e <code class="text-xs">Vitest</code>) para extrair o melhor das ferramentas de IA generativa, elevando a produtividade, a padronização e a qualidade do código entregue. Atuo com desenvoltura de ponta a ponta: do design de APIs assíncronas e bancos de dados eficientes (PostgreSQL, SQLite WAL) a containers Docker e interfaces web modernas (React, TypeScript, Tailwind CSS).
                 </p>
             </div>
+
+            <!-- Versão em Inglês -->
+            <div class="lang-en mt-3 text-sm sm:text-base leading-relaxed text-zinc-700 dark:text-zinc-300 space-y-3 text-justify">
+                <p>
+                    <strong>Senior Software Engineer</strong> with over 6 years of solid backend development experience within the Python ecosystem (FastAPI, AsyncIO), enterprise automations, and large-scale data integrations.
+                </p>
+                <p>
+                    Extensive hands-on experience maintaining and evolving mission-critical integrations between <strong>municipal real estate databases and the Brazilian Federal Revenue (SINTER)</strong>, reliably handling over <strong>480,000 requests/day</strong> with strict focus on resilience, transactional consistency, and architectural modernization.
+                </p>
+                <p>
+                    Actively applies <strong>AI-Assisted Software Engineering</strong> and <strong>Spec-Driven Development (SDD)</strong> in daily workflows: leveraging live context documentation (<code class="bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-sky-600 dark:text-sky-400 text-xs font-mono">AGENTS.md</code>) and rigorous TDD (<code class="text-xs">pytest</code> and <code class="text-xs">Vitest</code>) to maximize generative AI effectiveness, accelerating delivery speed while ensuring architectural rigor and zero technical hallucinations. Proven full-cycle proficiency: from asynchronous API design and high-concurrency databases (PostgreSQL, SQLite WAL) to Docker containerization and modern reactive web frontends (React, TypeScript, Tailwind CSS).
+                </p>
+            </div>
         </section>
 
         <!-- Habilidades & Competências -->
         <section id="habilidades" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">🛠️</span> Habilidades & Competências Técnicas
+                <span class="text-sky-500">🛠️</span>
+                <span class="lang-pt">Habilidades & Competências Técnicas</span>
+                <span class="lang-en">Technical Skills & Core Competencies</span>
             </h2>
             <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Desenvolvimento Assistido por IA</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">Desenvolvimento Assistido por IA</span>
+                        <span class="lang-en">AI-Assisted Engineering</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
                         Spec-Driven Development (SDD com AGENTS.md), TDD orientado a IA, Engenharia de Contexto, decomposição de agentes especializados e aceleração de refatoração de código legado.
                     </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Spec-Driven Development (SDD with AGENTS.md), AI-guided TDD, Context Engineering, specialized agent personas, and accelerated legacy codebase refactoring.
+                    </p>
                 </div>
+
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Backend & Integrações</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">Backend & Integrações</span>
+                        <span class="lang-en">Backend & Integrations</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
                         Python 3.12+ (AsyncIO, Type Hints), FastAPI, Pydantic v2, Padrão Saga, State Machines, Celery, Redis, Arquitetura Hexagonal, SOLID e Clean Code.
                     </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Python 3.12+ (AsyncIO, Type Hints), FastAPI, Pydantic v2, Saga Pattern, State Machines, Celery, Redis, Hexagonal Architecture, SOLID, and Clean Code.
+                    </p>
                 </div>
+
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Banco de Dados & Storage</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">Banco de Dados & Storage</span>
+                        <span class="lang-en">Databases & Storage</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
                         PostgreSQL, SQLite otimizado para alta concorrência (modo WAL, PRAGMA busy_timeout), SQLAlchemy 2.0, Alembic, MinIO (S3) e modelagem relacional eficiente.
                     </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        PostgreSQL, high-concurrency optimized SQLite (WAL mode, PRAGMA busy_timeout), SQLAlchemy 2.0, Alembic, MinIO (S3), and efficient relational modeling.
+                    </p>
                 </div>
+
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Frontend & Interfaces Web</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">Frontend & Interfaces Web</span>
+                        <span class="lang-en">Frontend & Web Interfaces</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
                         TypeScript estrito, React (Vite), Tailwind CSS, TanStack Query (Server State), PWA (Progressive Web Apps), UI responsiva e Mobile-First.
                     </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Strict TypeScript, React (Vite), Tailwind CSS, TanStack Query (Server State), PWA (Progressive Web Apps), Responsive UI, and Mobile-First design.
+                    </p>
                 </div>
+
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">DevOps, Cloud & CI/CD</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">DevOps, Cloud & CI/CD</span>
+                        <span class="lang-en">DevOps, Cloud & CI/CD</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
                         Docker e Docker Compose (multi-stage builds), Docker Swarm, Portainer, Fly.io, GitHub Actions automatizados e GitHub Container Registry (GHCR).
                     </p>
-                </div>
-                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Automação RPA & Extração</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
-                        Playwright, Selenium headless com Xvfb, contorno de Cloudflare Turnstile, parsing de documentos não estruturados (PDFs com pypdf, planilhas e HTMLs com BeautifulSoup4).
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Docker & Docker Compose (multi-stage builds), Docker Swarm, Portainer, Fly.io, automated GitHub Actions, and GitHub Container Registry (GHCR).
                     </p>
                 </div>
+
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">
+                        <span class="lang-pt">Automação RPA & Extração</span>
+                        <span class="lang-en">RPA Automation & Scraping</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Playwright, Selenium headless com Xvfb, contorno de Cloudflare Turnstile, parsing de documentos não estruturados (PDFs com pypdf, planilhas e HTMLs com BeautifulSoup4).
+                    </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Playwright, headless Selenium with Xvfb, Cloudflare Turnstile evasion, unstructured document parsing (PDFs with pypdf, spreadsheets, and HTML with BeautifulSoup4).
+                    </p>
+                </div>
+
             </div>
         </section>
 
         <!-- Experiência Profissional -->
         <section id="experiencia" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">💼</span> Experiência Profissional
+                <span class="text-sky-500">💼</span>
+                <span class="lang-pt">Experiência Profissional</span>
+                <span class="lang-en">Professional Experience</span>
             </h2>
             <article class="mt-4 space-y-6">
+                
                 <div class="relative pl-5 border-l-2 border-sky-500 dark:border-sky-500">
                     <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
-                        <h3 class="font-bold text-lg text-zinc-900 dark:text-zinc-100">Desenvolvedor de Software / Senior Python Developer</h3>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">2019 – Atual</span>
+                        <h3 class="font-bold text-lg text-zinc-900 dark:text-zinc-100">
+                            <span class="lang-pt">Desenvolvedor de Software / Senior Python Developer</span>
+                            <span class="lang-en">Senior Software Engineer / Senior Python Developer</span>
+                        </h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                            <span class="lang-pt">2019 – Atual</span>
+                            <span class="lang-en">2019 – Present</span>
+                        </span>
                     </div>
-                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Prefeitura de Goiânia • Secretaria Municipal de Finanças / Tecnologia</p>
+
+                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                        <span class="lang-pt">Prefeitura de Goiânia • Secretaria Municipal de Finanças / Tecnologia</span>
+                        <span class="lang-en">Goiânia City Hall • Municipal Department of Finance & Technology</span>
+                    </p>
                     
-                    <ul class="mt-3 text-sm space-y-2.5 list-disc list-inside text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                    <!-- Bullet points PT -->
+                    <ul class="lang-pt mt-3 text-sm space-y-2.5 list-disc list-inside text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         <li>
                             <strong>Integração Imobiliária com a Receita Federal (SINTER):</strong> Atuação no desenvolvimento, estabilização e sustentação do sistema de integração de dados cadastrais imobiliários com o Sistema Nacional de Gestão de Informações Territoriais (SINTER) da Receita Federal, processando <strong>mais de 480.000 requisições diárias</strong>.
                             <ul class="pl-6 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
@@ -203,45 +376,91 @@
                             </ul>
                         </li>
                     </ul>
+
+                    <!-- Bullet points EN -->
+                    <ul class="lang-en mt-3 text-sm space-y-2.5 list-disc list-inside text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        <li>
+                            <strong>Real Estate Integration with Brazilian Federal Revenue (SINTER):</strong> Core engineer responsible for the stability and evolution of the data integration platform syncing municipal property registries with the Federal Revenue's SINTER system, processing <strong>over 480,000 daily requests</strong>.
+                            <ul class="pl-6 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                                <li>Applied <strong>Saga Pattern</strong> and State Machines to guarantee distributed transactional consistency across multi-step asynchronous operations.</li>
+                                <li>Modernized and refactored legacy monolithic services into decoupled asynchronous Python microservices with high availability and resilience.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>AI-Assisted Development & Engineering Velocity:</strong>
+                            <ul class="pl-6 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                                <li>Leveraged generative AI workflows directly in the IDE to accelerate codebase refactoring, integration test suite generation, and business rule reverse engineering.</li>
+                                <li>Engineered an NLP conversational assistant (Chatbot) bridging legacy tax systems with modern interactive service channels.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="relative pl-5 border-l-2 border-zinc-300 dark:border-zinc-700">
                     <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
-                        <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-200">Automação & Processamento de Linguagem / Áudio</h3>
+                        <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-200">
+                            <span class="lang-pt">Automação & Processamento de Linguagem / Áudio</span>
+                            <span class="lang-en">Automation & Language / Audio Processing</span>
+                        </h3>
                         <span class="text-xs font-semibold uppercase tracking-wider text-zinc-500">2019</span>
                     </div>
-                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Projeto Independente</p>
+                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                        <span class="lang-pt">Projeto Independente</span>
+                        <span class="lang-en">Independent Project</span>
+                    </p>
                     <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
-                        <li>Desenvolvimento de aplicação de tradução multi-idioma e síntese de voz (Text-to-Speech) integrada a APIs em nuvem para estudo e acessibilidade.</li>
+                        <li>
+                            <span class="lang-pt">Desenvolvimento de aplicação de tradução multi-idioma e síntese de voz (Text-to-Speech) integrada a APIs em nuvem para estudo e acessibilidade.</span>
+                            <span class="lang-en">Developed a multi-language translation and Text-to-Speech (TTS) application integrating cloud APIs for accessibility and language study.</span>
+                        </li>
                     </ul>
                 </div>
+
             </article>
         </section>
 
         <!-- Projetos de Destaque -->
         <section id="projetos" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">🚀</span> Projetos em Destaque no GitHub
+                <span class="text-sky-500">🚀</span>
+                <span class="lang-pt">Projetos em Destaque no GitHub</span>
+                <span class="lang-en">Featured GitHub Projects</span>
             </h2>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Implementações reais com código aberto, TDD e arquitetura de produção</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                <span class="lang-pt">Implementações reais com código aberto, TDD e arquitetura de produção</span>
+                <span class="lang-en">Real-world open source implementations with TDD and production architecture</span>
+            </p>
 
             <div class="mt-4 grid gap-5">
+                
                 <!-- JusNotify -->
                 <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/70">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
                             <span>⚖️ JusNotify</span>
-                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300">Automação & Anti-Bot</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300">
+                                <span class="lang-pt">Automação & Anti-Bot</span>
+                                <span class="lang-en">Automation & Anti-Bot</span>
+                            </span>
                         </h3>
                         <a href="https://github.com/uadson/jusnotify" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/jusnotify ↗</a>
                     </div>
-                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                    
+                    <p class="lang-pt mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         Sistema automatizado de monitoramento de movimentações processuais no Projudi TJGO. Realiza raspagem periódica contornando proteções de <strong>Cloudflare Turnstile</strong> de forma indetectável em containers headless (Selenium + undetected-chromedriver sob display virtual Xvfb).
                     </p>
-                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                    <p class="lang-en mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Automated lawsuit progress tracking system for Projudi TJGO. Performs periodic scraping undetectably evading <strong>Cloudflare Turnstile</strong> bot protections inside headless Docker containers (Selenium + undetected-chromedriver with virtual display Xvfb).
+                    </p>
+
+                    <ul class="lang-pt mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
                         <li><strong>Arquitetura & Confiabilidade:</strong> Backend FastAPI assíncrono com SQLite configurado em modo WAL para concorrência sem locks, notificações via Telegram Bot API com retentativas e backoff exponencial.</li>
                         <li><strong>Frontend & DevOps:</strong> Painel SPA em React + TypeScript + TanStack Query, pipeline de CI/CD via GitHub Actions com envio de imagens para o GHCR e deploy automatizado em Docker Swarm/Portainer.</li>
+                    </ul>
+                    <ul class="lang-en mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Architecture & Reliability:</strong> Asynchronous FastAPI backend with SQLite in WAL mode for lock-free concurrency, automated Telegram Bot API alerts with exponential backoff retries.</li>
+                        <li><strong>Frontend & DevOps:</strong> Reactive SPA in React + TypeScript + TanStack Query, automated CI/CD pipeline via GitHub Actions pushing Docker images to GHCR for automated deployment in Docker Swarm/Portainer.</li>
                     </ul>
                 </div>
 
@@ -250,17 +469,29 @@
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
                             <span>📄 Doc-Tool</span>
-                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">Gerador Societário</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">
+                                <span class="lang-pt">Gerador Societário</span>
+                                <span class="lang-en">Legal Document Engine</span>
+                            </span>
                         </h3>
                         <a href="https://github.com/uadson/doc-tool" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/doc-tool ↗</a>
                     </div>
-                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+
+                    <p class="lang-pt mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         Aplicação fullstack voltada para contabilistas e advogados para elaboração e emissão automatizada de pacotes documentais societários completos (Estatutos Sociais, Atas de Assembleia, Listas de Presença e Termos de Posse) com validação jurídica estrita.
                     </p>
-                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                    <p class="lang-en mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Full-stack application for accountants and legal professionals to automatically draft and generate comprehensive corporate document packages (Association Bylaws, Minutes, Attendance Lists, and Terms of Office) with strict schema validation.
+                    </p>
+
+                    <ul class="lang-pt mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
                         <li><strong>Motor de Templates:</strong> Renderização precisa em PDF (<code class="text-xs">xhtml2pdf</code>) e geração nativa em DOCX (<code class="text-xs">python-docx</code>), com validação de schemas complexos via Pydantic v2.</li>
                         <li><strong>Frontend & Deploy:</strong> Interface mobile-first em React + Tailwind CSS com wizard em 5 etapas, cobertura integral de TDD com pytest e deploy em nuvem no Fly.io com volume persistente.</li>
+                    </ul>
+                    <ul class="lang-en mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Template Engine:</strong> Precise PDF rendering (<code class="text-xs">xhtml2pdf</code>) and native DOCX generation (<code class="text-xs">python-docx</code>), with complex nested schema validation using Pydantic v2.</li>
+                        <li><strong>Frontend & Deployment:</strong> Mobile-first React + Tailwind CSS 5-step wizard, comprehensive TDD coverage with pytest, and zero-cost cloud deployment on Fly.io with persistent volumes.</li>
                     </ul>
                 </div>
 
@@ -269,17 +500,29 @@
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
                             <span>📊 RPA & Financial Analytics</span>
-                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">Robô & Motor Analítico</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">
+                                <span class="lang-pt">Robô & Motor Analítico</span>
+                                <span class="lang-en">RPA & Financial Engine</span>
+                            </span>
                         </h3>
                         <a href="https://github.com/uadson/rpa" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/rpa ↗</a>
                     </div>
-                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+
+                    <p class="lang-pt mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         Robô de automação inteligente e motor analítico para extração de fichas financeiras e contracheques históricos no Portal do Servidor de Goiânia.
                     </p>
-                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                    <p class="lang-en mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Intelligent RPA automation and analytical engine for extracting and consolidating historical financial statements and paystubs from Goiânia's public employee portals.
+                    </p>
+
+                    <ul class="lang-pt mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
                         <li><strong>Automação Resiliente:</strong> Automação com Playwright navegando por múltiplos frames legados, captura de popups e parsing estruturado de contracheques PDF via <code class="text-xs">pypdf</code>.</li>
                         <li><strong>Engine de Normalização:</strong> Identificação e categorização de rubricas (proventos vs descontos), conversão monetária, endpoints analíticos em FastAPI e dashboard moderno em React com Dark Glassmorphic UI.</li>
+                    </ul>
+                    <ul class="lang-en mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Resilient Automation:</strong> Playwright automation navigating complex legacy HTML frame trees, popup handling, and structured PDF paystub parsing using <code class="text-xs">pypdf</code>.</li>
+                        <li><strong>Financial Engine:</strong> Automatic earnings vs deductions classification, monetary normalization, analytical FastAPI endpoints, and a modern Dark Glassmorphic React dashboard with Vitest.</li>
                     </ul>
                 </div>
 
@@ -288,77 +531,127 @@
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
                             <span>💰 ZeCash</span>
-                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300">PWA Financeiro</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300">
+                                <span class="lang-pt">PWA Financeiro</span>
+                                <span class="lang-en">Financial PWA</span>
+                            </span>
                         </h3>
                         <a href="https://github.com/uadson/zecash" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/zecash ↗</a>
                     </div>
-                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+
+                    <p class="lang-pt mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         Aplicação progressiva (PWA) para gestão financeira pessoal com leitor e importador inteligente de extratos bancários (OFX, CSV e PDFs de contracheques) e categorização automática com taxonomia padronizada.
                     </p>
-                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                    <p class="lang-en mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Progressive Web App (PWA) for personal finance management featuring an intelligent parser for bank statements (OFX, CSV, and PDF paystubs) with standardized automatic taxonomy categorization.
+                    </p>
+
+                    <ul class="lang-pt mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
                         <li><strong>Performance & Dados:</strong> SQLite em modo WAL com índices compostos de alta velocidade, rotinas de backup snapshot idempotentes (<code class="text-xs">sqlite3 .backup</code>) e API analítica em FastAPI.</li>
                         <li><strong>Mobile-First PWA:</strong> Frontend em React com TanStack Query para sincronização de estado atômico e interface otimizada para uso em dispositivos móveis.</li>
                     </ul>
+                    <ul class="lang-en mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Performance & Storage:</strong> SQLite in WAL mode with composite performance indexes, automated idempotent snapshot routines (<code class="text-xs">sqlite3 .backup</code>), and analytical FastAPI backend.</li>
+                        <li><strong>Mobile-First PWA:</strong> React frontend with TanStack Query for atomic cache invalidation and thumb-friendly mobile ergonomics.</li>
+                    </ul>
                 </div>
+
             </div>
         </section>
 
         <!-- Como Eu Trabalho: Spec-Driven Development & IA -->
         <section id="metodologia" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">🧠</span> Como Eu Trabalho: Spec-Driven Development & IA
+                <span class="text-sky-500">🧠</span>
+                <span class="lang-pt">Como Eu Trabalho: Spec-Driven Development & IA</span>
+                <span class="lang-en">How I Work: Spec-Driven Development & AI</span>
             </h2>
             <div class="mt-3 grid sm:grid-cols-2 gap-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                
                 <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">1. Especificação como Fonte de Verdade</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+                        <span class="lang-pt">1. Especificação como Fonte de Verdade</span>
+                        <span class="lang-en">1. Specification as Single Source of Truth</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
                         O desenvolvimento começa pela definição explícita do escopo, regras de negócio e restrições arquiteturais registradas em documentos vivos (<code class="text-sky-600 dark:text-sky-400 font-mono">AGENTS.md</code>). Isso serve como âncora de contexto para a IA e mantém o histórico de decisões do projeto.
                     </p>
-                </div>
-                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">2. TDD como Validador de IA</h3>
-                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
-                        Implementação guiada por testes automatizados prévios (<code class="text-xs">pytest</code> e <code class="text-xs">Vitest</code>). Os testes atuam como contrato inegociável, permitindo que as sugestões e refatorações auxiliadas por IA atinjam máxima precisão, sem regressões ou alucinações técnicas.
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                        Engineering starts with explicit definition of scope, business logic, and architectural constraints tracked in live documentation (<code class="text-sky-600 dark:text-sky-400 font-mono">AGENTS.md</code>). This provides an immutable context anchor for AI tooling and preserves architectural decisions.
                     </p>
                 </div>
+
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+                        <span class="lang-pt">2. TDD como Validador de IA</span>
+                        <span class="lang-en">2. TDD as AI Validator</span>
+                    </h3>
+                    <p class="lang-pt mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                        Implementação guiada por testes automatizados prévios (<code class="text-xs">pytest</code> e <code class="text-xs">Vitest</code>). Os testes atuam como contrato inegociável, permitindo que as sugestões e refatorações auxiliadas por IA atinjam máxima precisão, sem regressões ou alucinações técnicas.
+                    </p>
+                    <p class="lang-en mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                        Implementation guided by strict upfront testing (<code class="text-xs">pytest</code> and <code class="text-xs">Vitest</code>). Automated tests act as non-negotiable contracts, ensuring AI-generated or refactored code achieves maximum precision with zero regressions.
+                    </p>
+                </div>
+
             </div>
         </section>
 
         <!-- Educação & Certificações -->
         <div class="grid md:grid-cols-2 gap-6">
+            
             <section id="educacao" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
                 <h2 class="text-xl font-semibold flex items-center gap-2">
-                    <span class="text-sky-500">🎓</span> Educação
+                    <span class="text-sky-500">🎓</span>
+                    <span class="lang-pt">Educação</span>
+                    <span class="lang-en">Education</span>
                 </h2>
                 <div class="mt-3">
-                    <p class="font-medium text-zinc-900 dark:text-zinc-100">Tecnólogo em Análise e Desenvolvimento de Sistemas</p>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">Universidade Estácio de Sá — Conclusão em 2021</p>
+                    <p class="font-medium text-zinc-900 dark:text-zinc-100">
+                        <span class="lang-pt">Tecnólogo em Análise e Desenvolvimento de Sistemas</span>
+                        <span class="lang-en">Associate Degree in Systems Analysis and Development</span>
+                    </p>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                        <span class="lang-pt">Universidade Estácio de Sá — Conclusão em 2021</span>
+                        <span class="lang-en">Estácio de Sá University — Graduated in 2021</span>
+                    </p>
                 </div>
             </section>
 
             <section id="certificacoes" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
                 <h2 class="text-xl font-semibold flex items-center gap-2">
-                    <span class="text-sky-500">📜</span> Certificações & Cursos
+                    <span class="text-sky-500">📜</span>
+                    <span class="lang-pt">Certificações & Cursos</span>
+                    <span class="lang-en">Certifications & Courses</span>
                 </h2>
                 <ul class="mt-3 text-sm space-y-2 text-zinc-700 dark:text-zinc-300">
                     <li class="flex items-center gap-2">
-                        <span>•</span> Machine Learning de A a Z — IA Expert (2024)
+                        <span>•</span>
+                        <span class="lang-pt">Machine Learning de A a Z — IA Expert (2024)</span>
+                        <span class="lang-en">Machine Learning A-Z — IA Expert (2024)</span>
                     </li>
                     <li class="flex items-center gap-2">
-                        <span>•</span> Inteligência Artificial — IA Expert (2024)
+                        <span>•</span>
+                        <span class="lang-pt">Inteligência Artificial — IA Expert (2024)</span>
+                        <span class="lang-en">Artificial Intelligence — IA Expert (2024)</span>
                     </li>
                     <li class="flex items-center gap-2">
-                        <span>•</span> Desenvolvimento Web com Python — Geek University (2020)
+                        <span>•</span>
+                        <span class="lang-pt">Desenvolvimento Web com Python — Geek University (2020)</span>
+                        <span class="lang-en">Web Development with Python — Geek University (2020)</span>
                     </li>
                 </ul>
             </section>
+
         </div>
 
         <!-- Contato -->
         <section id="contato" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
             <h2 class="text-xl font-semibold flex items-center gap-2">
-                <span class="text-sky-500">📫</span> Contato & Redes
+                <span class="text-sky-500">📫</span>
+                <span class="lang-pt">Contato & Redes</span>
+                <span class="lang-en">Contact & Links</span>
             </h2>
             <div class="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-sm text-zinc-700 dark:text-zinc-300">
                 <p>📧 Email: <a href="mailto:uadsonpy@gmail.com" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">uadsonpy@gmail.com</a></p>
@@ -371,23 +664,106 @@
 
     <footer class="mx-auto max-w-5xl px-4 pb-10">
         <p class="text-center text-xs text-zinc-500">
-            © <span id="year"></span> Uadson Emile Castro Feitosa — Desenvolvido com Tailwind CSS & GitHub Pages
+            © <span id="year"></span> Uadson Emile Castro Feitosa — 
+            <span class="lang-pt">Desenvolvido com Tailwind CSS & GitHub Pages</span>
+            <span class="lang-en">Built with Tailwind CSS & GitHub Pages</span>
         </p>
     </footer>
 
     <script>
+        // Ano automático no rodapé
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Gerenciamento de Tema (Dark / Light)
         const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        function applyTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                if (themeIcon) themeIcon.textContent = '☀️';
+            } else {
+                document.documentElement.classList.remove('dark');
+                if (themeIcon) themeIcon.textContent = '🌙';
+            }
+        }
+
         function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            const isDark = !document.documentElement.classList.contains('dark');
+            applyTheme(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
+        
         themeToggle.addEventListener('click', toggleTheme);
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
+        
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(storedTheme === 'dark' || (!storedTheme && systemPrefersDark));
+
+        // Gerenciamento de Idioma (PT / EN)
+        function setLanguage(lang) {
+            const isEn = lang === 'en';
+            document.documentElement.lang = isEn ? 'en' : 'pt-BR';
+            localStorage.setItem('lang', isEn ? 'en' : 'pt');
+
+            // Atualiza título da aba
+            document.title = isEn 
+                ? "Uadson Emile Castro Feitosa | Senior Software Engineer | Python, Integrations & AI-Assisted Development"
+                : "Uadson Emile Castro Feitosa | Senior Software Engineer | Python, Integrações & AI-Assisted Development";
+
+            // Atualiza botões do seletor de idioma
+            const btnPt = document.getElementById('btnLangPt');
+            const btnEn = document.getElementById('btnLangEn');
+            if (btnPt && btnEn) {
+                if (isEn) {
+                    btnEn.className = "px-2 py-1 rounded-md transition-all font-medium text-sky-600 dark:text-sky-400 bg-white dark:bg-zinc-900 shadow-xs";
+                    btnPt.className = "px-2 py-1 rounded-md transition-all font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100";
+                } else {
+                    btnPt.className = "px-2 py-1 rounded-md transition-all font-medium text-sky-600 dark:text-sky-400 bg-white dark:bg-zinc-900 shadow-xs";
+                    btnEn.className = "px-2 py-1 rounded-md transition-all font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100";
+                }
+            }
         }
+
+        // Dropdown de Download de PDF
+        function toggleDownloadMenu(forceState) {
+            const menu = document.getElementById('downloadDropdownMenu');
+            const arrow = document.getElementById('dropdownArrow');
+            if (!menu) return;
+
+            const shouldOpen = typeof forceState === 'boolean' ? forceState : menu.classList.contains('hidden');
+            if (shouldOpen) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+            }
+        }
+
+        // Fechar dropdown ao clicar fora
+        document.addEventListener('click', function(e) {
+            const container = document.getElementById('downloadDropdownContainer');
+            if (container && !container.contains(e.target)) {
+                toggleDownloadMenu(false);
+            }
+        });
+
+        // Função de Download do PDF no idioma escolhido
+        function downloadResume(lang) {
+            setLanguage(lang);
+            toggleDownloadMenu(false);
+            // Pequeno delay para garantir que o navegador repinte o DOM no idioma correto antes do diálogo de impressão
+            setTimeout(function() {
+                window.print();
+            }, 180);
+        }
+
+        // Inicialização de Idioma (Parâmetro URL ?lang=en ou ?lang=pt, ou LocalStorage, ou Navegador)
+        const urlParams = new URLSearchParams(window.location.search);
+        const langQuery = urlParams.get('lang');
+        const savedLang = langQuery || localStorage.getItem('lang') || (navigator.language && navigator.language.startsWith('en') ? 'en' : 'pt');
+        setLanguage(savedLang === 'en' ? 'en' : 'pt');
     </script>
 
 </body>
