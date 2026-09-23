@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Uadson Emile Castro Feitosa | Senior Backend Engineer | Python, Architecture & AI Outcomes</title>
+    <title>Uadson Emile Castro Feitosa | Senior Software Engineer | Python, Integrações & AI-Assisted Development</title>
     <meta name="description"
-        content="Currículo de Uadson Emile Castro Feitosa - Senior Backend Engineer focado em Python, IA e Sistemas Distribuídos de Alta Performance." />
+        content="Currículo de Uadson Emile Castro Feitosa - Senior Software Engineer especialista em Python, integrações governamentais de alta performance e desenvolvimento assistido por IA." />
     <meta name="color-scheme" content="light dark" />
-    <meta property="og:title" content="Currículo | Uadson Emile" />
+    <meta property="og:title" content="Currículo | Uadson Emile Castro Feitosa" />
     <meta property="og:description"
-        content="Senior Backend Engineer | Python & AI | High-Performance Distributed Systems" />
+        content="Senior Software Engineer | Python & AI-Assisted Development | Integrações de Dados & Automações Resilientes" />
     <meta property="og:type" content="profile" />
     <meta property="og:locale" content="pt_BR" />
     <meta name="theme-color" content="#0ea5e9" />
@@ -34,7 +34,7 @@
     <style>
         @page {
             size: A4;
-            margin: 14mm;
+            margin: 12mm;
         }
 
         @media print {
@@ -45,225 +45,333 @@
             .page {
                 box-shadow: none !important;
                 margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
             }
         }
     </style>
 </head>
 
-<body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-sky-500 selection:text-white">
 
     <!-- Barra topo -->
-    <div
-        class="no-print sticky top-0 z-50 backdrop-blur bg-white/60 dark:bg-zinc-900/60 border-b border-zinc-200 dark:border-zinc-800">
+    <header class="no-print sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-zinc-900/70 border-b border-zinc-200 dark:border-zinc-800">
         <div class="mx-auto max-w-5xl px-4 py-2 flex items-center justify-between">
-            <nav class="text-sm font-medium hidden md:flex gap-4">
-                <a href="#sobre" class="hover:underline">Sobre</a>
-                <a href="#habilidades" class="hover:underline">Habilidades</a>
-                <a href="#experiencia" class="hover:underline">Experiência</a>
-                <a href="#projetos" class="hover:underline">Projetos</a>
-                <a href="#educacao" class="hover:underline">Educação</a>
-                <a href="#certificacoes" class="hover:underline">Certificações</a>
-                <a href="#contato" class="hover:underline">Contato</a>
+            <nav class="text-sm font-medium hidden md:flex gap-5">
+                <a href="#sobre" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Sobre</a>
+                <a href="#habilidades" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Habilidades</a>
+                <a href="#experiencia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Experiência</a>
+                <a href="#projetos" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Projetos</a>
+                <a href="#metodologia" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Metodologia</a>
+                <a href="#educacao" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Educação</a>
+                <a href="#contato" class="text-zinc-600 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contato</a>
             </nav>
-            <div class="flex gap-2">
+            <div class="flex gap-2 ml-auto md:ml-0">
                 <button id="themeToggle"
-                    class="no-print border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 text-sm rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800">🌙
-                    Tema</button>
+                    class="no-print border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 text-sm rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    aria-label="Alternar tema">
+                    🌙 Tema
+                </button>
                 <button onclick="window.print()"
-                    class="no-print bg-sky-600 text-white px-3 py-1.5 text-sm rounded-md hover:bg-sky-700">⬇️ Baixar
-                    PDF</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cabeçalho -->
-    <header class="page mx-auto max-w-5xl px-4 mt-8 mb-6">
-        <div
-            class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6 flex flex-col md:flex-row gap-6 items-center md:items-start">
-            <img src="src/assets/img/me.jpeg" alt="Foto de Uadson Emile Castro Feitosa"
-                class="no-print w-32 h-32 rounded-full object-cover border-4 border-sky-500 shadow-soft" />
-            <div>
-                <h1 class="text-3xl md:text-4xl font-bold">Uadson Emile Castro Feitosa</h1>
-                <p class="mt-1 text-lg text-zinc-600 dark:text-zinc-400">Senior Backend Engineer • Python • Building
-                    AI-Ready Systems</p>
-                <ul class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
-                    <li>📧 <a href="mailto:uadsonpy@gmail.com" class="hover:underline">uadsonpy@gmail.com</a></li>
-                    <li>💼 <a href="https://www.linkedin.com/in/uadsonfeitosa" target="_blank"
-                            class="hover:underline">linkedin.com/in/uadsonfeitosa</a></li>
-                    <li>🐙 <a href="https://github.com/uadson" target="_blank"
-                            class="hover:underline">github.com/uadson</a></li>
-                    <li>📍 Goiânia, Goiás – Brasil</li>
-                </ul>
+                    class="no-print bg-sky-600 text-white px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-sky-700 transition-colors shadow-sm">
+                    ⬇️ Baixar PDF
+                </button>
             </div>
         </div>
     </header>
 
+    <!-- Cabeçalho Principal -->
+    <div class="page mx-auto max-w-5xl px-4 mt-6 mb-6">
+        <div class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6 flex flex-col md:flex-row gap-6 items-center md:items-start">
+            <img src="src/assets/img/me.jpeg" alt="Foto de Uadson Emile Castro Feitosa"
+                class="w-32 h-32 rounded-full object-cover border-4 border-sky-500 shadow-soft shrink-0" />
+            <div class="w-full text-center md:text-left">
+                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Uadson Emile Castro Feitosa</h1>
+                </div>
+                <p class="mt-1 text-base sm:text-lg font-medium text-sky-600 dark:text-sky-400">
+                    Senior Software Engineer • Python & AI-Assisted Development
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    Especialista em Integrações de Dados, Backend Python (FastAPI) e Desenvolvimento Assistido por IA
+                </p>
+                <ul class="mt-3 text-sm text-zinc-700 dark:text-zinc-300 flex flex-wrap gap-x-5 gap-y-1.5 justify-center md:justify-start">
+                    <li>📧 <a href="mailto:uadsonpy@gmail.com" class="hover:underline text-sky-600 dark:text-sky-400">uadsonpy@gmail.com</a></li>
+                    <li>💼 <a href="https://www.linkedin.com/in/uadsonfeitosa" target="_blank" rel="noopener noreferrer" class="hover:underline text-sky-600 dark:text-sky-400">linkedin.com/in/uadsonfeitosa</a></li>
+                    <li>🐙 <a href="https://github.com/uadson" target="_blank" rel="noopener noreferrer" class="hover:underline text-sky-600 dark:text-sky-400">github.com/uadson</a></li>
+                    <li>📍 Goiânia, Goiás – Brasil</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <main class="mx-auto max-w-5xl px-4 space-y-6 pb-16">
 
-        <section id="sobre" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Resumo Profissional</h2>
-            <p class="mt-2 text-justify">
-                <strong>Senior Backend Engineer</strong> com sólida trajetória em sistemas distribuídos de alta
-                performance, atualmente direcionando a carreira para <strong>Engenharia de GenAI e Machine
-                    Learning</strong>.
-                <br><br>
-                Com profunda experiência em Back-end (FastAPI, Django), foco na construção de sistemas distribuídos de
-                alta
-                disponibilidade, resilientes e escaláveis. Especialista em integracões complexas, orquestração de
-                microsserviços com Celery/Redis e observabilidade em tempo real. Entusiasta de IA Generativa e NLP,
-                aplicando LLMs para resolver problemas de negócio reais.
-
-            </p>
+        <!-- Resumo Profissional -->
+        <section id="sobre" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">⚡</span> Resumo Profissional
+            </h2>
+            <div class="mt-3 text-sm sm:text-base leading-relaxed text-zinc-700 dark:text-zinc-300 space-y-3 text-justify">
+                <p>
+                    <strong>Desenvolvedor de Software Sênior</strong> com mais de 6 anos de experiência sólida em desenvolvimento backend no ecossistema Python (FastAPI, AsyncIO), automações e integrações de dados em larga escala.
+                </p>
+                <p>
+                    Possuo sólida experiência prática na sustentação e evolução de integrações de missão crítica entre <strong>sistemas de dados imobiliários municipais e a Receita Federal (SINTER)</strong>, com volume superior a <strong>480 mil requisições/dia</strong>, com foco em resiliência, consistência transacional e modernização arquitetural.
+                </p>
+                <p>
+                    Adoto ativamente o <strong>Desenvolvimento Assistido por IA</strong> e o <strong>Spec-Driven Development (SDD)</strong> no fluxo de trabalho diário: utilizo documentação viva de contexto (<code class="bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-sky-600 dark:text-sky-400 text-xs font-mono">AGENTS.md</code>) e TDD rigoroso (<code class="text-xs">pytest</code> e <code class="text-xs">Vitest</code>) para extrair o melhor das ferramentas de IA generativa, elevando a produtividade, a padronização e a qualidade do código entregue. Atuo com desenvoltura de ponta a ponta: do design de APIs assíncronas e bancos de dados eficientes (PostgreSQL, SQLite WAL) a containers Docker e interfaces web modernas (React, TypeScript, Tailwind CSS).
+                </p>
+            </div>
         </section>
 
-        <section id="habilidades" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Habilidades & Competências</h2>
-            <div class="mt-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">Core Engineering (O Alicerce)</h3>
-                    <p>Python 3.13 (AsyncIO/Type Hinting), FastAPI, Hexagonal Architecture, SOLID, Design Patterns, TDD.
+        <!-- Habilidades & Competências -->
+        <section id="habilidades" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">🛠️</span> Habilidades & Competências Técnicas
+            </h2>
+            <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Desenvolvimento Assistido por IA</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Spec-Driven Development (SDD com AGENTS.md), TDD orientado a IA, Engenharia de Contexto, decomposição de agentes especializados e aceleração de refatoração de código legado.
                     </p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">Sistemas Distribuídos</h3>
-                    <p>Celery, Redis, RabbitMQ, Event-Driven Architecture, Saga Pattern, High-Concurrency Handling.</p>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Backend & Integrações</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Python 3.12+ (AsyncIO, Type Hints), FastAPI, Pydantic v2, Padrão Saga, State Machines, Celery, Redis, Arquitetura Hexagonal, SOLID e Clean Code.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">AI & ML Integration (Foco Atual)</h3>
-                    <p>LangChain, MLflow, Scikit-learn, Vector Stores (RAG), LLM Orchestration, Prompt Engineering
-                        avançado.</p>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Banco de Dados & Storage</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        PostgreSQL, SQLite otimizado para alta concorrência (modo WAL, PRAGMA busy_timeout), SQLAlchemy 2.0, Alembic, MinIO (S3) e modelagem relacional eficiente.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">DevOps & MLOps</h3>
-                    <p>Docker/Docker Compose, CI/CD (GitHub Actions), PostgreSQL Tuning, MinIO, Model Serving.</p>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Frontend & Interfaces Web</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        TypeScript estrito, React (Vite), Tailwind CSS, TanStack Query (Server State), PWA (Progressive Web Apps), UI responsiva e Mobile-First.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">Banco de Dados</h3>
-                    <p>SQLAlchemy 2.0 (ORM & Core), Migrations (Alembic), Complex SQL Queries, Data Modeling.</p>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">DevOps, Cloud & CI/CD</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Docker e Docker Compose (multi-stage builds), Docker Swarm, Portainer, Fly.io, GitHub Actions automatizados e GitHub Container Registry (GHCR).
+                    </p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-sky-600 dark:text-sky-400">Metodologia</h3>
-                    <p>AI-Augmented Development (Uso de LLMs para produtividade), Agile, Code Review rigoroso.</p>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-sky-600 dark:text-sky-400">Automação RPA & Extração</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 leading-snug">
+                        Playwright, Selenium headless com Xvfb, contorno de Cloudflare Turnstile, parsing de documentos não estruturados (PDFs com pypdf, planilhas e HTMLs com BeautifulSoup4).
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="experiencia" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Experiência Profissional</h2>
-            <article class="mt-3 space-y-6">
-                <div class="relative pl-4 border-l-2 border-zinc-200 dark:border-zinc-700">
-                    <h3 class="font-bold text-lg">Tech Lead / Senior Python Engineer</h3>
-                    <p class="text-sm text-sky-600 dark:text-sky-400 font-medium">Prefeitura de Goiânia • 2019 – Atual
-                    </p>
-                    <ul class="mt-2 text-sm space-y-2 list-disc list-inside text-zinc-700 dark:text-zinc-300">
+        <!-- Experiência Profissional -->
+        <section id="experiencia" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">💼</span> Experiência Profissional
+            </h2>
+            <article class="mt-4 space-y-6">
+                <div class="relative pl-5 border-l-2 border-sky-500 dark:border-sky-500">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-lg text-zinc-900 dark:text-zinc-100">Desenvolvedor de Software / Senior Python Developer</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">2019 – Atual</span>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Prefeitura de Goiânia • Secretaria Municipal de Finanças / Tecnologia</p>
+                    
+                    <ul class="mt-3 text-sm space-y-2.5 list-disc list-inside text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         <li>
-                            <strong>Engenharia de Sistemas Críticos (SINTER):</strong>
-                            Lidero a arquitetura do sistema de integração tributária (480k+ req/dia). Meu foco é
-                            garantir que o sistema sobreviva a falhas externas.
-                            <ul class="pl-5 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400">
-                                <li>Apliquei <strong>Padrão Saga</strong> e State Machines para gerenciar transações
-                                    distribuídas complexas.</li>
-                                <li>Reduzi o débito técnico migrando monolitos legados para microsserviços Python
-                                    assíncronos modernos.</li>
+                            <strong>Integração Imobiliária com a Receita Federal (SINTER):</strong> Atuação no desenvolvimento, estabilização e sustentação do sistema de integração de dados cadastrais imobiliários com o Sistema Nacional de Gestão de Informações Territoriais (SINTER) da Receita Federal, processando <strong>mais de 480.000 requisições diárias</strong>.
+                            <ul class="pl-6 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                                <li>Aplicação de <strong>Padrão Saga</strong> e máquinas de estado (State Machines) para garantir consistência transacional distribuída em operações complexas e assíncronas.</li>
+                                <li>Modernização e refatoração de bases legadas monolíticas para microsserviços modernos em Python com foco em alta disponibilidade e tolerância a falhas.</li>
                             </ul>
                         </li>
                         <li>
-                            <strong>Iniciativas de Inovação:</strong>
-                            Atuo como ponto focal na adoção de novas tecnologias.
-                            <ul class="pl-5 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400">
-                                <li>Desenvolvi Chatbot híbrido (NLP) integrando Legacy Systems com interfaces
-                                    conversacionais modernas.</li>
-                                <li>Implementei fluxos de trabalho pessoais "AI-Assisted", utilizando LLMs para acelerar
-                                    drasticamente a refatoração de bases de código legadas e a escrita de testes.</li>
+                            <strong>Desenvolvimento e Produtividade Assistidos por IA:</strong>
+                            <ul class="pl-6 mt-1 list-circle space-y-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                                <li>Uso diário de ferramentas de inteligência artificial generativa integradas ao IDE para acelerar refatorações, criação de suítes de testes de regressão e documentação de regras de negócio.</li>
+                                <li>Desenvolvimento de assistente conversacional (Chatbot com NLP) para integração de sistemas legados de atendimento tributário a interfaces modernas.</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <div class="relative pl-4 border-l-2 border-zinc-200 dark:border-zinc-700">
-                    <h3 class="font-bold text-lg">Projeto Pessoal: Tradutor Multi-idioma & TTS</h3>
-                    <p class="text-sm text-sky-600 dark:text-sky-400 font-medium">Desenvolvimento Independente • 2019
-                    </p>
-                    <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-zinc-700 dark:text-zinc-300">
-                        <li>Desenvolvimento de aplicação para tradução automática de textos (Português, Inglês,
-                            Espanhol) e síntese de voz (Text-to-Speech) utilizando <strong>Google APIs</strong>.</li>
-                        <li>Foco na integração de bibliotecas de terceiros e processamento de áudio para fins de
-                            acessibilidade e estudo de idiomas.</li>
+                <div class="relative pl-5 border-l-2 border-zinc-300 dark:border-zinc-700">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-200">Automação & Processamento de Linguagem / Áudio</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-zinc-500">2019</span>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Projeto Independente</p>
+                    <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li>Desenvolvimento de aplicação de tradução multi-idioma e síntese de voz (Text-to-Speech) integrada a APIs em nuvem para estudo e acessibilidade.</li>
                     </ul>
                 </div>
             </article>
         </section>
 
-        <section id="projetos" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Projetos & Estudos Estratégicos</h2>
-            <div class="mt-3 space-y-6">
-                <div>
-                    <h3 class="font-bold text-zinc-800 dark:text-zinc-200">� Foundation to Agents (R&D em Arquitetura
-                        ML)</h3>
-                    <p class="text-sm text-sky-600 dark:text-sky-400 font-medium mb-1">Laboratório de Engenharia para
-                        Sistemas de IA</p>
-                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-                        Projeto open-source desenvolvido para demonstrar como aplicar <strong>Arquitetura
-                            Hexagonal</strong> no ciclo de vida de Machine Learning. O objetivo não é apenas treinar
-                        modelos, mas criar o ecossistema robusto ao redor deles.
+        <!-- Projetos de Destaque -->
+        <section id="projetos" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">🚀</span> Projetos em Destaque no GitHub
+            </h2>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Implementações reais com código aberto, TDD e arquitetura de produção</p>
+
+            <div class="mt-4 grid gap-5">
+                <!-- JusNotify -->
+                <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/70">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                        <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                            <span>⚖️ JusNotify</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300">Automação & Anti-Bot</span>
+                        </h3>
+                        <a href="https://github.com/uadson/jusnotify" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/jusnotify ↗</a>
+                    </div>
+                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Sistema automatizado de monitoramento de movimentações processuais no Projudi TJGO. Realiza raspagem periódica contornando proteções de <strong>Cloudflare Turnstile</strong> de forma indetectável em containers headless (Selenium + undetected-chromedriver sob display virtual Xvfb).
                     </p>
-                    <ul class="text-sm list-disc list-inside text-zinc-700 dark:text-zinc-300 space-y-1">
-                        <li><strong>O que prova:</strong> Minha capacidade de organizar código ML complexo em camadas
-                            desacopladas (Ports & Adapters), facilitando testes e manutenção.</li>
-                        <li><strong>Tech Stack:</strong> Integração "manual" de Scikit-learn com FastAPI, orquestrada
-                            via Docker Compose, persistindo metadados em PostgreSQL e artefatos em MinIO (Bucket S3).
-                        </li>
+                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Arquitetura & Confiabilidade:</strong> Backend FastAPI assíncrono com SQLite configurado em modo WAL para concorrência sem locks, notificações via Telegram Bot API com retentativas e backoff exponencial.</li>
+                        <li><strong>Frontend & DevOps:</strong> Painel SPA em React + TypeScript + TanStack Query, pipeline de CI/CD via GitHub Actions com envio de imagens para o GHCR e deploy automatizado em Docker Swarm/Portainer.</li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="font-bold text-zinc-800 dark:text-zinc-200">🚀 SINTER Core (Produção)</h3>
-                    <p class="text-sm text-sky-600 dark:text-sky-400 font-medium mb-1">Engenharia de Backend Pura</p>
-                    <ul class="text-sm list-disc list-inside text-zinc-700 dark:text-zinc-300 space-y-1">
-                        <li>Demonstração de competência em criar sistemas que não caem. Uso intensivo de filas (Celery),
-                            cache (Redis) e monitoramento para garantir SLAs governamentais rígidos.</li>
+                <!-- Doc-Tool -->
+                <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/70">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                        <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                            <span>📄 Doc-Tool</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">Gerador Societário</span>
+                        </h3>
+                        <a href="https://github.com/uadson/doc-tool" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/doc-tool ↗</a>
+                    </div>
+                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Aplicação fullstack voltada para contabilistas e advogados para elaboração e emissão automatizada de pacotes documentais societários completos (Estatutos Sociais, Atas de Assembleia, Listas de Presença e Termos de Posse) com validação jurídica estrita.
+                    </p>
+                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Motor de Templates:</strong> Renderização precisa em PDF (<code class="text-xs">xhtml2pdf</code>) e geração nativa em DOCX (<code class="text-xs">python-docx</code>), com validação de schemas complexos via Pydantic v2.</li>
+                        <li><strong>Frontend & Deploy:</strong> Interface mobile-first em React + Tailwind CSS com wizard em 5 etapas, cobertura integral de TDD com pytest e deploy em nuvem no Fly.io com volume persistente.</li>
+                    </ul>
+                </div>
+
+                <!-- RPA & Financial Analytics -->
+                <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/70">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                        <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                            <span>📊 RPA & Financial Analytics</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">Robô & Motor Analítico</span>
+                        </h3>
+                        <a href="https://github.com/uadson/rpa" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/rpa ↗</a>
+                    </div>
+                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Robô de automação inteligente e motor analítico para extração de fichas financeiras e contracheques históricos no Portal do Servidor de Goiânia.
+                    </p>
+                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Automação Resiliente:</strong> Automação com Playwright navegando por múltiplos frames legados, captura de popups e parsing estruturado de contracheques PDF via <code class="text-xs">pypdf</code>.</li>
+                        <li><strong>Engine de Normalização:</strong> Identificação e categorização de rubricas (proventos vs descontos), conversão monetária, endpoints analíticos em FastAPI e dashboard moderno em React com Dark Glassmorphic UI.</li>
+                    </ul>
+                </div>
+
+                <!-- ZeCash -->
+                <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/70">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                        <h3 class="font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                            <span>💰 ZeCash</span>
+                            <span class="text-xs font-normal px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300">PWA Financeiro</span>
+                        </h3>
+                        <a href="https://github.com/uadson/zecash" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-sky-600 dark:text-sky-400 hover:underline font-mono">github.com/uadson/zecash ↗</a>
+                    </div>
+                    <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        Aplicação progressiva (PWA) para gestão financeira pessoal com leitor e importador inteligente de extratos bancários (OFX, CSV e PDFs de contracheques) e categorização automática com taxonomia padronizada.
+                    </p>
+                    <ul class="mt-2 text-xs sm:text-sm space-y-1 list-disc list-inside text-zinc-600 dark:text-zinc-400">
+                        <li><strong>Performance & Dados:</strong> SQLite em modo WAL com índices compostos de alta velocidade, rotinas de backup snapshot idempotentes (<code class="text-xs">sqlite3 .backup</code>) e API analítica em FastAPI.</li>
+                        <li><strong>Mobile-First PWA:</strong> Frontend em React com TanStack Query para sincronização de estado atômico e interface otimizada para uso em dispositivos móveis.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="educacao" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Educação</h2>
-            <div class="mt-3 flex items-center gap-3">
-                <div>
-                    <p class="font-medium">Tecnólogo em Análise e Desenvolvimento de Sistemas</p>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">Universidade Estácio de Sá — 2021</p>
+        <!-- Como Eu Trabalho: Spec-Driven Development & IA -->
+        <section id="metodologia" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">🧠</span> Como Eu Trabalho: Spec-Driven Development & IA
+            </h2>
+            <div class="mt-3 grid sm:grid-cols-2 gap-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">1. Especificação como Fonte de Verdade</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                        O desenvolvimento começa pela definição explícita do escopo, regras de negócio e restrições arquiteturais registradas em documentos vivos (<code class="text-sky-600 dark:text-sky-400 font-mono">AGENTS.md</code>). Isso serve como âncora de contexto para a IA e mantém o histórico de decisões do projeto.
+                    </p>
+                </div>
+                <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">2. TDD como Validador de IA</h3>
+                    <p class="mt-1 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+                        Implementação guiada por testes automatizados prévios (<code class="text-xs">pytest</code> e <code class="text-xs">Vitest</code>). Os testes atuam como contrato inegociável, permitindo que as sugestões e refatorações auxiliadas por IA atinjam máxima precisão, sem regressões ou alucinações técnicas.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="certificacoes" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Certificações / Cursos Complementares</h2>
-            <ul class="mt-3 text-sm space-y-3">
-                <li class="flex items-center gap-3">
-                    📜 Machine Learning de A a Z — IA Expert (2024)
-                </li>
-                <li class="flex items-center gap-3">
-                    📜 Inteligência Artificial — IA Expert (2024)
-                </li>
-                <li class="flex items-center gap-3">
-                    📜 Desenvolvimento Web com Python — Geek University (2020)
-                </li>
-            </ul>
-        </section>
+        <!-- Educação & Certificações -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <section id="educacao" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+                <h2 class="text-xl font-semibold flex items-center gap-2">
+                    <span class="text-sky-500">🎓</span> Educação
+                </h2>
+                <div class="mt-3">
+                    <p class="font-medium text-zinc-900 dark:text-zinc-100">Tecnólogo em Análise e Desenvolvimento de Sistemas</p>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">Universidade Estácio de Sá — Conclusão em 2021</p>
+                </div>
+            </section>
 
-        <section id="contato" class="rounded-xl bg-white dark:bg-zinc-900 shadow-soft p-6">
-            <h2 class="text-xl font-semibold">Contato</h2>
-            <p class="mt-2">📧 <a href="mailto:uadsonpy@gmail.com" class="underline">uadsonpy@gmail.com</a></p>
-            <p>💼 <a href="https://www.linkedin.com/in/uadsonfeitosa" target="_blank"
-                    class="underline">linkedin.com/in/uadsonfeitosa</a></p>
-            <p>🐙 <a href="https://github.com/uadson" target="_blank" class="underline">github.com/uadson</a></p>
+            <section id="certificacoes" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+                <h2 class="text-xl font-semibold flex items-center gap-2">
+                    <span class="text-sky-500">📜</span> Certificações & Cursos
+                </h2>
+                <ul class="mt-3 text-sm space-y-2 text-zinc-700 dark:text-zinc-300">
+                    <li class="flex items-center gap-2">
+                        <span>•</span> Machine Learning de A a Z — IA Expert (2024)
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span>•</span> Inteligência Artificial — IA Expert (2024)
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span>•</span> Desenvolvimento Web com Python — Geek University (2020)
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Contato -->
+        <section id="contato" class="rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-soft p-6">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+                <span class="text-sky-500">📫</span> Contato & Redes
+            </h2>
+            <div class="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                <p>📧 Email: <a href="mailto:uadsonpy@gmail.com" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">uadsonpy@gmail.com</a></p>
+                <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/uadsonfeitosa" target="_blank" rel="noopener noreferrer" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">linkedin.com/in/uadsonfeitosa</a></p>
+                <p>🐙 GitHub: <a href="https://github.com/uadson" target="_blank" rel="noopener noreferrer" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">github.com/uadson</a></p>
+            </div>
         </section>
 
     </main>
 
     <footer class="mx-auto max-w-5xl px-4 pb-10">
-        <p class="text-center text-xs text-zinc-500">© <span id="year"></span> Uadson Emile Castro Feitosa — Currículo
+        <p class="text-center text-xs text-zinc-500">
+            © <span id="year"></span> Uadson Emile Castro Feitosa — Desenvolvido com Tailwind CSS & GitHub Pages
         </p>
     </footer>
 
@@ -275,7 +383,11 @@
             localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
         }
         themeToggle.addEventListener('click', toggleTheme);
-        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
     </script>
 
 </body>
