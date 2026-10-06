@@ -26,6 +26,14 @@ Este documento serve como fonte única da verdade (*Single Source of Truth*) par
 
 ## 3. Histórico de Versões e Entregas
 
+### [v1.2.1] - 06/10/2026 - Otimização de Layout de Impressão e Paginação do PDF
+- **Ajustes de Impressão (@media print):**
+  - Refinamento das margens da página A4 (`7mm 10mm`) e padding de seções para garantir enquadramento exato em 4 páginas.
+  - Reset de estilos escuros para garantir impressão limpa com fundo branco, bordas sutis e tipografia nítida.
+  - Prevenção de quebra (`break-inside: avoid`) em subitens de experiência e projetos.
+- **Governança Git:**
+  - Branch `feature/print-pagination-opt`, merge na `main`, tag `v1.2.1` e push remoto.
+
 ### [v1.2.0] - 06/10/2026 - Agregação de Fundamentos Acadêmicos e Projetos de Graduação
 - **Enriquecimento da Formação Acadêmica (Educação):**
   - Detalhamento dos pilares formativos da graduação em Análise e Desenvolvimento de Sistemas (Universidade Estácio de Sá).

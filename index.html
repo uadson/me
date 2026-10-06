@@ -43,7 +43,7 @@
 
         @page {
             size: A4;
-            margin: 12mm;
+            margin: 7mm 10mm;
         }
 
         @media print {
@@ -57,9 +57,42 @@
                 padding: 0 !important;
             }
 
-            body {
+            html, body {
                 background: white !important;
-                color: black !important;
+                color: #09090b !important;
+            }
+
+            main {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 0.75rem !important;
+            }
+
+            section {
+                padding: 1rem !important;
+            }
+
+            /* Forçar tema claro e bordas sutis na impressão */
+            .dark {
+                background-color: white !important;
+                color: #09090b !important;
+            }
+            .dark section, .dark div {
+                background-color: white !important;
+                border-color: #e4e4e7 !important;
+            }
+            .dark p, .dark span, .dark li {
+                color: #27272a !important;
+            }
+            .dark strong, .dark h2, .dark h3 {
+                color: #09090b !important;
+            }
+
+            #experiencia > div > div, #projetos > div > div {
+                break-inside: avoid;
             }
         }
     </style>
