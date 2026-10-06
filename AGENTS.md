@@ -26,6 +26,14 @@ Este documento serve como fonte única da verdade (*Single Source of Truth*) par
 
 ## 3. Histórico de Versões e Entregas
 
+### [v1.3.0] - 06/10/2026 - Inclusão Estratégica de Java & C++ no Subtítulo do Cabeçalho
+- **Destaque de Fundamentos no Cabeçalho:**
+  - Atualização do subtítulo do cabeçalho profissional para evidenciar a bagagem sólida em linguagens fortemente tipadas e compiladas: *"Especialista em Integrações de Dados, Backend Python (FastAPI) | Base Sólida em Java & C++"*.
+  - Versão em inglês alinhada: *"Specialist in Data Integrations, Python Backend (FastAPI) | Solid Foundations in Java & C++"*.
+  - Preservado o headline sênior focado em Python e IA, evitando dispersão de autoridade técnica.
+- **Governança Git:**
+  - Branch `feature/header-java-cpp`, merge na branch `main`, tag `v1.3.0` e push remoto.
+
 ### [v1.2.1] - 06/10/2026 - Otimização de Layout de Impressão e Paginação do PDF
 - **Ajustes de Impressão (@media print):**
   - Refinamento das margens da página A4 (`7mm 10mm`) e padding de seções para garantir enquadramento exato em 4 páginas.
