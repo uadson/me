@@ -26,6 +26,18 @@ Este documento serve como fonte única da verdade (*Single Source of Truth*) par
 
 ## 3. Histórico de Versões e Entregas
 
+### [v1.2.0] - 06/10/2026 - Agregação de Fundamentos Acadêmicos e Projetos de Graduação
+- **Enriquecimento da Formação Acadêmica (Educação):**
+  - Detalhamento dos pilares formativos da graduação em Análise e Desenvolvimento de Sistemas (Universidade Estácio de Sá).
+  - Inclusão explícita de fundamentos em **Algoritmos & Lógica Estruturada (C++)** (estruturas de controle, tipos de dados, laços/decisões e automações de cálculo).
+  - Inclusão explícita de **Engenharia de Software, Programação Orientada a Objetos (POO) & Interfaces Gráficas Desktop (Java / AWT / Swing)** (abstração, herança, polimorfismo, encapsulamento e arquitetura orientada a eventos).
+  - Link direto para o repositório público no GitHub com os códigos desenvolvidos durante o curso (`trabalhos-faculdade`).
+- **Aprimoramento das Habilidades Técnicas:**
+  - Destacada a sólida fundamentação em linguagens fortemente tipadas e orientadas a objetos (Java, C++) no bloco de *Backend & Integrações*, reforçando a versatilidade além do ecossistema Python.
+  - Suporte bilíngue mantido rigorosamente em PT-BR e EN.
+- **Governança Git:**
+  - Criação da branch `feature/academic-foundations`, merge na branch `main`, tag `v1.2.0` e push remoto.
+
 ### [v1.1.0] - 23/09/2026 - Suporte Bilíngue (PT/EN) e Download Customizado em PDF
 - **Internacionalização Completa (PT e EN):**
   - Tradução técnica integral de todas as seções (Resumo Profissional, Habilidades, Experiência, Projetos, Metodologia, Educação e Contato).
