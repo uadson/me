@@ -26,6 +26,13 @@ Este documento serve como fonte única da verdade (*Single Source of Truth*) par
 
 ## 3. Histórico de Versões e Entregas
 
+### [v1.3.1] - 08/10/2026 - Precisão Arquitetural do Chatbot Tributário (State Machine / FSM)
+- **Ajuste Técnico de Arquitetura (ConectaGyn):**
+  - Substituição da menção a NLP por **Máquina de Estados Finita (State Machine / FSM)** em FastAPI nas versões PT e EN da experiência profissional na Prefeitura de Goiânia.
+  - Alinhamento rigoroso com a arquitetura real do projeto ConectaGyn (desacoplamento em microsserviços, FSM determinística para autosserviço tributário via WhatsApp/Webchat e transbordo para backoffice Django Channels/Celery).
+- **Governança Git:**
+  - Criação da branch `feature/chatbot-state-machine-update`, merge na `main`, tag `v1.3.1` e push remoto.
+
 ### [v1.3.0] - 06/10/2026 - Inclusão Estratégica de Java & C++ no Subtítulo do Cabeçalho
 - **Destaque de Fundamentos no Cabeçalho:**
   - Atualização do subtítulo do cabeçalho profissional para evidenciar a bagagem sólida em linguagens fortemente tipadas e compiladas: *"Especialista em Integrações de Dados, Backend Python (FastAPI) | Base Sólida em Java & C++"*.
